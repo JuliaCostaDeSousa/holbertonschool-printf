@@ -9,16 +9,34 @@
  */
 int main(void)
 {
-    unsigned int ui;
-    void *addr;
+	int len;
+    int len2;
 
-    ui = (unsigned int)INT_MAX + 1024;
-    addr = (void *)0x7ffe637541f0;
-    _printf("Negative:[%d]\n", -762534);
-    printf("Negative:[%d]\n", -762534);
-    _printf("Unsigned:[%u]\n", ui);
-    printf("Unsigned:[%u]\n", ui);
-    _printf("Character:[%c]\n", 'H');
-    printf("Character:[%c]\n", 'H');
+	len = _printf("Positive:[%d]\n", 762534);
+    len2 =printf("Positive:[%d]\n", 762534);
+	_printf("Len:[%d]\n", len);
+    printf("Len:[%d]\n", len2);
+
+    len = _printf("Negative:[%d]\n", -762534);
+    len2 =printf("Negative:[%d]\n", -762534);
+	_printf("Len:[%d]\n", len);
+    printf("Len:[%d]\n", len2);
+
+	len = _printf("Negative:[%d]\n", 0);
+    len2 =printf("Negative:[%d]\n", 0);
+	_printf("Len:[%d]\n", len);
+    printf("Len:[%d]\n", len2);
+
+	
+	len = _printf("Negative:[%d]\n", -0);
+    len2 =printf("Negative:[%d]\n", -0);
+	_printf("Len:[%d]\n", len);
+    printf("Len:[%d]\n", len2);
+
+	len = _printf("Percent:[%%]\n");
+	len2 = printf("Percent:[%%]\n");
+    _printf("Len:[%d]\n", len);
+    printf("Len:[%d]\n", len2);
+
     return (0);
 }
