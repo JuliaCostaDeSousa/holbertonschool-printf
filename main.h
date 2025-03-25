@@ -1,3 +1,6 @@
+#ifndef MAIN_H
+#define MAIN_H
+
 #include <stdarg.h>
 #include <stdlib.h>
 
@@ -9,9 +12,9 @@
  */
 typedef struct printf
 {
-	char *specifier;
+	char specifier;
 	int (*printf_function)(va_list ap);
-}printf_t;
+} printf_t;
 
 int _printf(const char *format, ...);
 int print_char(va_list ap);
@@ -19,3 +22,4 @@ int print_string(va_list ap);
 int print_integer(va_list ap);
 int print_percent(va_list ap);
 int _putchar(char c);
+#endif
