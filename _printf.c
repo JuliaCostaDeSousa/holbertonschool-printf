@@ -6,30 +6,28 @@ int _printf(const char *format, ...)
 	int i = 0;
 	int j = 0;
 	int count = 0;
-	
-	va_start(ap, format);
-
 	printf_t specifiers[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"d", print_integer},
-		{"i", print_integer},
-		{"%", print_percent},
-		{NULL, NULL},
+		{'d', print_integer},
+		{'i', print_integer},
+		{'%', print_percent},
 	};
+
+	va_start(ap, format);
 
 	while (format && format[i])
 	{
-		if (format[i] == "%")
+		if (format[i] == '%')
 		{
-			while (specifiers[j].specifier != NULL)
+			while (specifiers[j].specifier)
 			{
 				if (specifiers[j].specifier == format[i + 1])
 				{
 					count += specifiers[j].printf_function(ap);
+
 				}
 				j++;
 			}
+			i++;
 		}
 		else
 		{
@@ -37,6 +35,7 @@ int _printf(const char *format, ...)
 			count++;
 		}
 		i++;
+
 	}
 	va_end(ap);
 	return (count);
