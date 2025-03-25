@@ -18,14 +18,14 @@ int print_string(va_list ap)
 	{
 		while (null_str[j])
 		{
-			putchar(null_str[j]);
+			_putchar(null_str[j]);
 			j++;
 		}
 		return (j);
 	}
 	while (str[i])
 	{
-		putchar(str[i]);
+		_putchar(str[i]);
 		i++;
 	}
 	return (i);
