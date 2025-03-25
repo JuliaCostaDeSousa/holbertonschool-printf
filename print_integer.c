@@ -2,9 +2,15 @@
 #include <stdio.h>
 
 /**
- * print_integer - writes an integer
- * @ap: argument containing the number to write
- * Return: length of argument to write
+ * print_integer - Prints an integer to the standard output.
+ * @ap: A va_list argument containing the integer to print.
+ *
+ * Description: This function retrieves an integer from the variadic argument
+ * list and prints it using `_putchar`. It correctly handles negative numbers
+ * by printing a minus sign before processing the absolute value.
+ * The function reverses the number before printing to ensure correct order.
+ *
+ * Return: The number of characters printed.
  */
 
 int print_integer(va_list ap)
@@ -19,14 +25,12 @@ int print_integer(va_list ap)
 		number *= -1;
 		count++;
 	}
-
 	if (number == 0)
 	{
 		_putchar('0');
 		count++;
 		return (count);
 	}
-
 	/* Reverse the number so we can write it in the right order*/
 	while (number)
 	{
