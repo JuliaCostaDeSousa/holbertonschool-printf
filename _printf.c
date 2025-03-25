@@ -4,7 +4,7 @@ int _printf(const char *format, ...)
 {
 	va_list ap;
 	int i = 0;
-	int j = 0;
+	int j;
 	int count = 0;
 	
 	va_start(ap, format);
@@ -20,10 +20,19 @@ int _printf(const char *format, ...)
 
 	while (format && format[i])
 	{
+		j = 0;
+
+	/*warning: comparison between pointer and integer
+	*	if (format[i] == "%") 
+	*/
 		if (format[i] == "%")
 		{
 			while (specifiers[j].specifier != NULL)
 			{
+				/* warning: comparison with string literal results in unspecified behavior [-Waddress]
+63:45: warning: comparison between pointer and integer
+   63 |                 if (specifiers[j].specifier == format[i + 1])
+   */
 				if (specifiers[j].specifier == format[i + 1])
 				{
 					count += specifiers[j].printf_function(ap);
