@@ -45,6 +45,6 @@ int print_integer(va_list ap)
 	{
 		_putchar(number_array[i]);
 		count++;
-	}	
+	}
 	return (count);
 }
