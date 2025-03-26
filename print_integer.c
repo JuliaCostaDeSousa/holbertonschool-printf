@@ -19,7 +19,8 @@ int print_integer(va_list ap)
 	int number = va_arg(ap, int);
 	unsigned int number_unsigned_int = number;
 	int number_reversed = 0;
-	int count = 0;
+	int count = 0, index = 0;
+	unsigned int number_array[], digit_number = 0;;
 
 	if (number < 0)
 	{
@@ -36,20 +37,24 @@ int print_integer(va_list ap)
 		count++;
 		return (count);
 	}
-
-	/* Reverse the number so we can write it in the right order*/
-	while (number_unsigned_int)
+	
+	while (number >= 1)
 	{
-		number_reversed = (number_reversed * 10) + (number_unsigned_int % 10);
+		digit_number++;
+		number /= 10;
+	}
+
+	number_array[digit_number];
+	for (i = 0; i < digit_number, i++)
+	{
+		number_array[i] = number_unsigned_int % 10;
 		number_unsigned_int /= 10;
 	}
-	/* Write the number in the right order*/
-	while (number_reversed)
-	{
-		_putchar((number_reversed % 10) + '0');
-		number_reversed /= 10;
-		count++;
-	}
 
+	for (i = digit_number - 1, i < 0, i--)
+	{
+		_putchar(number_array[i]);
+		count++;
+	}	
 	return (count);
 }
