@@ -1,59 +1,77 @@
 #include "main.h"
+#include <stdarg.h>
+
 
 /**
- * _printf - Custom implementation of the printf function.
- * @format: Format string containing directives for output formatting.
+ * handle_specifier - handles character coming after '%'
+ * @format: the string
+ * @i: counter
+ * @ap: variadic list
  *
- * Description: This function works similarly to the standard printf function.
- * It processes a format string and prints corresponding values based on
- * specifiers found within the string. The function supports the following
- * format specifiers:
- * - %c: Prints a single character.
- * - %s: Prints a string.
- * - %%: Prints a percent sign.
- * - %d, %i: Prints an integer.
- *
- * Return: The number of characters printed (excluding the null byte).
+ * Return: nombre de caractères imprimés pour ce specifier
  */
-
-int _printf(const char *format, ...)
+int handle_specifier(const char *format, int *i, va_list ap)
 {
-	va_list ap;
-	int i = 0, j = 0, count = 0, check = 0;
+	int j = 0, count = 0, found = 0;
+
 	printf_t specifiers[] = {
 		{'c', print_char},
 		{'s', print_string},
-		{'%', print_percent},
 		{'d', print_integer},
 		{'i', print_integer},
+		{'%', print_percent},
+		{'\0', NULL}
 	};
 
-	va_start(ap, format);
-	while (format && format[i])
+	while (specifiers[j].specifier)
 	{
-		if (format[i] == '%')
-		{	
-			check = 0;	
-			j = 0;
-			while (specifiers[j].specifier && format[i + 1])
-			{
-				if (specifiers[j].specifier == format[i + 1])
-				{
-					check = 1;
-					count += specifiers[j].printf_function(ap);
-					i++;
-				}
-				j++;
-			}
-			if (check == 0)
-			_putchar(format[i]);
+		if (specifiers[j].specifier == format[*i + 1])
+		{
+			count += specifiers[j].printf_function(ap);
+			found = 1;
+			break;
 		}
+		j++;
+	}
+	if (!found)
+	{
+		_putchar('%');
+		_putchar(format[*i + 1]);
+		count += 2;
+	}
+	*i += 2;
+	return (count);
+}
+
+/**
+ * _printf - Simplified printf (tâche 0)
+ * @format: Format string
+ *
+ * Return: Number of chars printed
+ */
+int _printf(const char *format, ...)
+{
+	va_list ap;
+	int i = 0, count = 0;
+
+	if (!format)
+		return (-1);
+
+	va_start(ap, format);
+	while (format[i])
+	{
+		if (format[i] == '%' && format[i + 1] == '\0')
+		{
+			return (-1);
+		}
+		else if (format[i] == '%' && format[i + 1])
+			count += handle_specifier(format, &i, ap);
 		else
 		{
 			_putchar(format[i]);
 			count++;
+			i++;
 		}
-		i++;
 	}
 	va_end(ap);
 	return (count);

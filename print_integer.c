@@ -1,7 +1,6 @@
 #include "main.h"
 #include <stdio.h>
 #include <limits.h>
-
 /**
  * print_integer - Prints an integer to the standard output.
  * @ap: A va_list argument containing the integer to print.
@@ -13,7 +12,6 @@
  *
  * Return: The number of characters printed.
  */
-
 int print_integer(va_list ap)
 {
 	int number = va_arg(ap, int), count = 0, i = 0;
@@ -31,14 +29,12 @@ int print_integer(va_list ap)
 	}
 	else
 	number_unsigned_int = number;
-
 	if (number_unsigned_int == 0)
 	{
 		_putchar('0');
 		count++;
 		return (count);
 	}
-
 	while (number_unsigned_int > 0)
 	{
 		number_array[digit_number++] = (number_unsigned_int % 10) + '0';
@@ -49,6 +45,6 @@ int print_integer(va_list ap)
 	{
 		_putchar(number_array[i]);
 		count++;
-	}	
+	}
 	return (count);
 }
