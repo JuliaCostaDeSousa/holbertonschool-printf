@@ -32,21 +32,17 @@ int _printf(const char *format, ...)
 	while (format && format[i])
 	{
 		if (format[i] == '%')
-		{
+		{		
 			j = 0;
-			while (specifiers[j].specifier)
+			while (specifiers[j].specifier && format[i + 1])
 			{
 				if (specifiers[j].specifier == format[i + 1])
 				{
 					count += specifiers[j].printf_function(ap);
-				}
-				else
-				{
-					_putchar(format[i]);
+					i++;
 				}
 				j++;
 			}
-			i++;
 		}
 		else
 		{
