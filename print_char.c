@@ -8,6 +8,6 @@
  */
 int print_char(va_list ap)
 {
-	_putchar(va_arg(ap, int) + '0');
+	_putchar(va_arg(ap, int));
 	return (1);
 }
