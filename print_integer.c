@@ -16,11 +16,9 @@
 
 int print_integer(va_list ap)
 {
-	int number = va_arg(ap, int);
-	unsigned int number_unsigned_int = number;
-	int number_reversed = 0;
-	int count = 0, index = 0;
-	unsigned int number_array[], digit_number = 0;;
+	int number = va_arg(ap, int), count = 0, i = 0;
+	unsigned int number_unsigned_int = number, digit_number = 0;
+	char number_array[10];
 
 	if (number < 0)
 	{
@@ -29,29 +27,25 @@ int print_integer(va_list ap)
 		if (number == INT_MIN)
 		number_unsigned_int = (unsigned int)INT_MAX + 1;
 		else
-		number_unsigned_int *= -1;
+		number_unsigned_int = number * -1;
 	}
+	else
+	number_unsigned_int = number;
+
 	if (number_unsigned_int == 0)
 	{
 		_putchar('0');
 		count++;
 		return (count);
 	}
-	
-	while (number >= 1)
-	{
-		digit_number++;
-		number /= 10;
-	}
 
-	number_array[digit_number];
-	for (i = 0; i < digit_number, i++)
+	while (number_unsigned_int > 0)
 	{
-		number_array[i] = number_unsigned_int % 10;
+		number_array[digit_number++] = (number_unsigned_int % 10) + '0';
 		number_unsigned_int /= 10;
 	}
 
-	for (i = digit_number - 1, i < 0, i--)
+	for (i = digit_number - 1; i >= 0; i--)
 	{
 		_putchar(number_array[i]);
 		count++;
