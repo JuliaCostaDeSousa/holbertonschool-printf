@@ -19,7 +19,7 @@
 int _printf(const char *format, ...)
 {
 	va_list ap;
-	int i = 0, j = 0, count = 0;
+	int i = 0, j = 0, count = 0, check = 0;
 	printf_t specifiers[] = {
 		{'c', print_char},
 		{'s', print_string},
@@ -32,17 +32,21 @@ int _printf(const char *format, ...)
 	while (format && format[i])
 	{
 		if (format[i] == '%')
-		{		
+		{	
+			check = 0;	
 			j = 0;
 			while (specifiers[j].specifier && format[i + 1])
 			{
 				if (specifiers[j].specifier == format[i + 1])
 				{
+					check = 1;
 					count += specifiers[j].printf_function(ap);
 					i++;
 				}
 				j++;
 			}
+			if (check == 0)
+			_putchar(format[i]);
 		}
 		else
 		{
