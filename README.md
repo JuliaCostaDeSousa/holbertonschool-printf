@@ -1,7 +1,7 @@
 # _printf
 
 ## Description
-This project is a custom implementation of standard the `_printf` function in C, which handles variadic arguments and custom format specifiers. This version mimics the original function's behavior by supporting various format specifiers to display different types of data.
+This project is a custom implementation of the standard `printf` function in C, which handles variadic arguments and custom format specifiers. This version mimics the original function's behavior by supporting various format specifiers to display different types of data.
 
 ## Requirements
 
@@ -51,7 +51,7 @@ Here is the link toward the man page of `_printf` function:
 
 ## Flowchart 
 
-![Flowchart of _printf](https://github.com/JuliaCostaDeSousa/holbertonschool-printf/blob/main/Flowchart%20_printf.jpg)
+![Flowchart of_printf](https://github.com/JuliaCostaDeSousa/holbertonschool-printf/blob/main/Flowchart%20_printf.jpg)
 
 ## File descriptions
 
@@ -121,10 +121,7 @@ To use this custom printf function, follow these steps:
   `git clone https://github.com/JuliaCostaDeSousa/holbertonschool-printf.git`
 * Navigate to the project directory
   `cd holbertonschool-printf`
-* Copy the main file from the **"Examples"** section above
-* Compile the project
-  `gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c -o printf_test`
-
+* Copy the `main.c` file from the **"Examples"** section above
 
 If you want to check if Betty coding style is respected, you need to :
 
