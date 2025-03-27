@@ -52,6 +52,7 @@ Here is the link toward the man page of `_printf` function:
 ## File descriptions
 
 .
+
 ├── main.h               # Header file containing function prototypes and macros
 
 ├── _printf.c            # Main function that mimics printf behavior
@@ -70,6 +71,9 @@ Here is the link toward the man page of `_printf` function:
 
 └── man_3_printf         # Manual page for the _printf function
 
+## Flowchart 
+
+**!!! METTRE LE FLOWCHART !!!**
 
 ## Examples
 
