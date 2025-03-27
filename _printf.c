@@ -8,7 +8,7 @@
  * @i: counter
  * @ap: variadic list
  *
- * Return: nombre de caractères imprimés pour ce specifier
+ * Return: number of characters printed
  */
 int handle_specifier(const char *format, int *i, va_list ap)
 {
