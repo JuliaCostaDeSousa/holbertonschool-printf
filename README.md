@@ -33,12 +33,6 @@ This `_printf` function doesn't handle:
 
 `int _printf(const char *format, ...);`
 
-## Man page
-
-Here is the link toward the man page of `_printf` function:
-
-[Man page of _printf](https://github.com/JuliaCostaDeSousa/holbertonschool-printf/blob/main/man_3_printf)
-
 ## Supported conversion specifiers
 
 | Specifier   | Description           |
@@ -49,31 +43,39 @@ Here is the link toward the man page of `_printf` function:
 | `%d`        | Prints an integer     |
 | `%i`        | Prints an integer     |
 
+## Man page
+
+Here is the link toward the man page of `_printf` function:
+
+[Man page of _printf](https://github.com/JuliaCostaDeSousa/holbertonschool-printf/blob/main/man_3_printf)
+
+## Flowchart 
+
+![Flowchart of _printf](https://github.com/JuliaCostaDeSousa/holbertonschool-printf/blob/main/Flowchart%20_printf.jpg)
+
 ## File descriptions
 
 .
 
-├── main.h               # Header file containing function prototypes and macros
+├── main.h                # Header file containing function prototypes and macros
 
-├── _printf.c            # Main function that mimics printf behavior
+├── _printf.c             # Main function that mimics printf behavior
 
-├── print_char.c         # Function handling characters
+├── print_char.c          # Function handling characters
 
-├── print_string.c       # Function handling strings
+├── print_string.c        # Function handling strings
 
-├── print_percent.c      # Function handling percentages
+├── print_percent.c       # Function handling percentages
 
-├── print_integer.c      # Function handling integers
+├── print_integer.c       # Function handling integers
 
-├── _putchar.c           # Function for printing
+├── _putchar.c            # Function for printing
 
-├── README.md            # Project documentation
+├── README.md             # Project documentation
 
-└── man_3_printf         # Manual page for the _printf function
+├── Flowchart _printf.jpg # Flowchart of main function
 
-## Flowchart 
-
-**!!! METTRE LE FLOWCHART !!!**
+└── man_3_printf          # Manual page for the _printf function
 
 ## Examples
 
@@ -174,13 +176,13 @@ To launch the executable, use:
 
 ## Authors
 
-Beydi Coulibaly
+**Beydi Coulibaly**
 
-[Github](https://github.com/Beydi-dev)
+* [Github](https://github.com/Beydi-dev)
 
-Julia Costa de Sousa
+**Julia Costa de Sousa**
 
-[Github](https://github.com/JuliaCostaDeSousa)
+* [Github](https://github.com/JuliaCostaDeSousa)
 
 
 
