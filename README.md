@@ -17,13 +17,27 @@ This project is a custom implementation of standard the `printf` function in C, 
 
 * Function prototypes must be included in `main.h`
 
+# Limitations
+
+This function doesn't handle: 
+
+* flag characters
+
+* field width
+
+* precision
+
+* length modifiers
+
 ## Function prototype
 
 `int _printf(const char *format, ...);`
 
 ## Man page
 
-!!! METTRE LE LIEN !!! 
+Here is the link toward the man page of `_printf` function:
+
+[Man page of _printf](https://github.com/JuliaCostaDeSousa/holbertonschool-printf/blob/main/man_3_printf)
 
 ## Supported conversion specifiers
 
@@ -38,27 +52,26 @@ This project is a custom implementation of standard the `printf` function in C, 
 ## File descriptions
 
 .
+├── main.h               # Header file containing function prototypes and macros
 
-├── main.h           # Header file containing function prototypes and macros
+├── _printf.c            # Main function that mimics printf behavior
 
-├── _printf.c        # Main function that mimics printf behavior
+├── print_char.c         # Function handling characters
 
-├── print_char.c     # Function handling characters
+├── print_string.c       # Function handling strings
 
-├── print_string.c   # Function handling strings
+├── print_percent.c      # Function handling percentages
 
-├── print_percent.c  # Function handling percentages
+├── print_integer.c      # Function handling integers
 
-├── print_integer.c  # Function handling integers
+├── _putchar.c           # Function for printing
 
-├── _putchar.c       # Function for printing
+├── README.md            # Project documentation
 
-├── README.md        # Project documentation
-
-└── man_3_printf     # Manual page for the _printf function
+└── man_3_printf         # Manual page for the _printf function
 
 
-## Examples and comparison with printf
+## Examples
 
 If you want to test `_printf`, you can copy instructions below in a file named `main.c`  in the `holbertonschool-printf` after cloning the repository (see **"Installation"** section below)
 
@@ -83,6 +96,17 @@ int main(void)
 }
 ```
 
+The output should be :
+
+```
+Character: [H]
+Return Value: _printf = 11
+String: [Hello, world!]
+Return Value: _printf = 15
+Integer: [1234]
+Return Value: _printf = 5
+```
+
 ## Installation
 
 To use this custom printf function, follow these steps:
@@ -91,7 +115,7 @@ To use this custom printf function, follow these steps:
   `git clone https://github.com/JuliaCostaDeSousa/holbertonschool-printf.git`
 * Navigate to the project directory
   `cd holbertonschool-printf`
-* Copy the main file from the **"Examples and comparison with printf"** section above
+* Copy the main file from the **"Examples"** section above
 * Compile the project
   `gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c -o printf_test`
 
@@ -146,8 +170,13 @@ To launch the executable, use:
 
 ## Authors
 
-Beydi Coulibaly & Julia Costa de Sousa
+Beydi Coulibaly
 
+[Github](https://github.com/Beydi-dev)
+
+Julia Costa de Sousa
+
+[Github](https://github.com/JuliaCostaDeSousa)
 
 
 
