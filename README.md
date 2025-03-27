@@ -38,20 +38,29 @@ This project is a custom implementation of standard the `printf` function in C, 
 ## File descriptions
 
 .
+
 ├── main.h           # Header file containing function prototypes and macros
+
 ├── _printf.c        # Main function that mimics printf behavior
+
 ├── print_char.c     # Function handling characters
+
 ├── print_string.c   # Function handling strings
+
 ├── print_percent.c  # Function handling percentages
+
 ├── print_integer.c  # Function handling integers
+
 ├── _putchar.c       # Function for printing
+
 ├── README.md        # Project documentation
+
 └── man_3_printf     # Manual page for the _printf function
 
 
 ## Examples and comparison with printf
 
-If you want to test _printf, you can copy instructions below in a file named `main.c`  in the `holbertonschool-printf` after cloning the repository (see **"Installation"** section below)
+If you want to test `_printf`, you can copy instructions below in a file named `main.c`  in the `holbertonschool-printf` after cloning the repository (see **"Installation"** section below)
 
 ```
 #include "main.h"
@@ -134,6 +143,10 @@ To compile, use `gcc` with the following command:
 
 To launch the executable, use:
 `./_printf`
+
+## Authors
+
+Beydi Coulibaly & Julia Costa de Sousa
 
 
 
