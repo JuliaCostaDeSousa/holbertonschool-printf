@@ -1,7 +1,7 @@
 # _printf
 
 ## Description
-This project is a custom implementation of standard the `printf` function in C, which handles variadic arguments and custom format specifiers. This version mimics the original function's behavior by supporting various format specifiers to display different types of data.
+This project is a custom implementation of standard the `_printf` function in C, which handles variadic arguments and custom format specifiers. This version mimics the original function's behavior by supporting various format specifiers to display different types of data.
 
 ## Requirements
 
@@ -19,7 +19,7 @@ This project is a custom implementation of standard the `printf` function in C, 
 
 # Limitations
 
-This function doesn't handle: 
+This `_printf` function doesn't handle: 
 
 * flag characters
 
