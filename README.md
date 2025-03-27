@@ -51,7 +51,7 @@ Here is the link toward the man page of `_printf` function:
 
 ## Flowchart 
 
-![Flowchart of_printf](https://github.com/JuliaCostaDeSousa/holbertonschool-printf/blob/main/Flowchart%20_printf.jpg)
+![Flowchart of_printf](https://github.com/JuliaCostaDeSousa/holbertonschool-printf/blob/main/Flowchart%20printf.jpg)
 
 ## File descriptions
 
